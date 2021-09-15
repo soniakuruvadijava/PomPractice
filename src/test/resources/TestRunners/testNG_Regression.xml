@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 
-<suite name="Amazon test" thread-count="2"
+<suite name="Amazon test" thread-count="1"
 	parallel="tests" verbose="4">
 
 		<listeners>
-	
+		
 		<listener
 			class-name="com.qa.amazon.listners.ExtentReportListener" />
-		
+		<listener
+			class-name="com.qa.amazon.listners.TestAllureListener" />
 	</listeners>
 
 	<test name="Login Page Test">

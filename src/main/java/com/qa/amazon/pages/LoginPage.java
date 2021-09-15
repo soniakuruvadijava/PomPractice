@@ -5,6 +5,8 @@ import org.openqa.selenium.WebDriver;
 
 import com.qa.amazon.utils.ElementUtil;
 
+import io.qameta.allure.Step;
+
 public class LoginPage {
 
 	private WebDriver driver;
@@ -25,26 +27,31 @@ public class LoginPage {
 		
 	}
 	
+	@Step("Step: Getting Login Page title")
 	public String LaunchPageTitle()
 	{
 		return Eleutil.waitForTitleContains("Online", 10);
 	}
 	
+	@Step("Step: Click on Launch Sign In button ")
 	public void clickonLaunchSignIn()
 	{
 		Eleutil.doClick(LaunchSignInButton);
 	}
 	
+	@Step("Step: Enter UserName {0} in User name field  ")
 	public void enterUserName(String UserName)
 	{
 		Eleutil.doSendKeys(SignInEmail, UserName);
 	}
 	
+	@Step("Step: Click on Continue button after entering UserName")
 	public void clickonContinue()
 	{
 		Eleutil.doClick(SignInContinue);
 	}
 	
+	@Step("Step: Click on Continue button after entering UserName")
 	public void enterPassword(String Password)
 	{
 		Eleutil.doSendKeys(SignInPassword, Password);
@@ -55,6 +62,7 @@ public class LoginPage {
 		Eleutil.doClick(SignInButton);
 	}
 	
+	@Step("Step: Login with Valid Login and Password : {0} and {1}")
 	public UserAccountPage dologin(String UserName, String Password)
 	{
 		
